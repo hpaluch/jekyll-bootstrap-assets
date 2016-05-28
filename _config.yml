@@ -9,6 +9,7 @@ gems:
   - jekyll-assets
 
 assets:
+  cdn: https://hpaluch.github.io/jekyll-bootstrap-assets
   compress:
     # do net mess with messy javascript files (thery are minified anyway)
     js: false
