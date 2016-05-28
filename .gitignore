@@ -1,5 +1,6 @@
 _site
 .asset-cache
+.sprockets-manifest-*.json
 *.swp
 *.bak
 
