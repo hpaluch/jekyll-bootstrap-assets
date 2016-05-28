@@ -1,6 +1,6 @@
 # Jekyll Blog with Boostrap template and assets (cache busting)
 
-Hello! This is template form Jekyll (static web site Blog generator)
+Hello! This is template for Jekyll (static web site Blog generator)
 using responsive Bootstrap template and Jekyll-assets (cache busting
 and compression)
 
