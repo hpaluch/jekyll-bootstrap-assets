@@ -31,7 +31,7 @@
 		{% if page.url == node.url %}
 			{% assign class = ' active' %}
 		{% endif %}
-		<a href="{{node.url}}" class="blog-nav-item{{class}}" title="{{ node.title }}">{{node.menuTitle}}</a>
+		<a href="{{ site.url }}{{ node.url }}" class="blog-nav-item{{class}}" title="{{ node.title }}">{{node.menuTitle}}</a>
         {% endfor %}
 	{% for node in site.navigation.external %}
 		<a href="{{node.url}}" class="blog-nav-item" title="{{ node.title }}">{{node.menuTitle}}</a>
