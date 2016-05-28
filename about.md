@@ -1,7 +1,7 @@
 ---
 menuOrder: 005
 title: Sample About page
-menuTitle: Home
+menuTitle: About
 layout: default
 description: Samotheing about me
 keywords: sample about 

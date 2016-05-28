@@ -1,7 +1,7 @@
 
 name: ""
 description: ""
-url: "http://YOUR_SITE_URL"
+url: "https://hpaluch.github.io/jekyll-bootstrap-assets"
 
 exclude: [ "*.sh" , "*.swp", "README.md","Gemfile","Gemfile.lock" ]
 

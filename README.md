@@ -4,6 +4,9 @@ Hello! This is template form Jekyll (static web site Blog generator)
 using responsive Bootstrap template and Jekyll-assets (cache busting
 and compression)
 
+See [Live Demo](https://hpaluch.github.io/jekyll-bootstrap-assets)!
+
+
 
 ## Setup
 
