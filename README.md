@@ -14,33 +14,36 @@ These instructions are for Ubuntu 14.04.4 LTS for Jekyll 3.1.3:
 
 Install Ruby 2 (Jekyll 3.x requirements):
 
-	:::bash
-	sudo apt-get install ruby2.0-dev ruby2.0
+```bash
+sudo apt-get install ruby2.0-dev ruby2.0
+```
 
 Install bundler (into /usr/local/bin) via command:
 
-	:::bash
-	sudo gem2.0 install bundler
+```bash
+sudo gem2.0 install bundler
+```
 
 Install Jekyll itself (as non privileged user):
 
 
-	:::bash
-	bundler install
+```bash
+bundler install
+```
 
 ## Running Jekyll
 
 * To Generate static pages in `_site` directory:
 
-	:::bash
-	./generate_website.sh
-
-
+```bash
+./generate_website.sh
+```
 
 * To Develop pages dynamically
 
-	:::bash
-	./run_jekyll_server.sh
+```bash
+./run_jekyll_server.sh
+```
 
 # Links
 
