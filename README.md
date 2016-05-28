@@ -1,4 +1,4 @@
-# Jekyll Blog with Boostrap template and assets (cache bustin)
+# Jekyll Blog with Boostrap template and assets (cache busting)
 
 Hello! This is template form Jekyll (static web site Blog generator)
 using responsive Bootstrap template and Jekyll-assets (cache busting
@@ -30,7 +30,7 @@ Install Jekyll itself (as non privileged user):
 
 ## Running Jekyll
 
-* To Genereate static pages in `_site` directory:
+* To Generate static pages in `_site` directory:
 
 	:::bash
 	./generate_website.sh
