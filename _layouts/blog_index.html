@@ -1,0 +1,15 @@
+{% include header.html %}
+
+	{{ content }}
+
+<h2>Most recent Posts:</h2>
+
+{% for post in site.posts limit: 10 %}
+<div class="blog-post">
+            <h2 class="blog-post-title"><a href ="{{ post.url }}">{{ post.title }}</a></h2>
+            <p class="blog-post-meta">{{ post.date | date: "%m/%d/%Y" }}</p>
+	    {{ post.excerpt }}
+</div><!-- /.blog-post -->
+{% endfor %}
+{% include footer.html %}
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="{{ page.description }}" lang="en" />
+    <meta name="keywords" content="{{ page.keywords }}" lang="en" />
+    <meta name="author" content="AUTHOR" />
+    <title>{{ page.title }}</title>
+    <!-- Bootstrap core CSS,
+	 IE10 viewport hack for Surface/desktop Windows 8 bug,
+	 Custom styles for this template 
+      -->
+    {% css style %}
+    <link rel="icon" type="image/x-icon" href="{{ site.url }}/favicon.ico" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    {% js ie8bundle %}
+    <![endif]-->
+  </head>
+  <body>
+    <div class="blog-masthead">
+      <div class="container">
+
+        <nav class="blog-nav">
+        {% assign sorted_pages = site.pages | sort: 'menuOrder' %}
+	{% for node in  sorted_pages %}
+		{% assign class = '' %}
+		{% if page.url == node.url %}
+			{% assign class = ' active' %}
+		{% endif %}
+		<a href="{{node.url}}" class="blog-nav-item{{class}}" title="{{ node.title }}">{{node.menuTitle}}</a>
+        {% endfor %}
+	{% for node in site.navigation.external %}
+		<a href="{{node.url}}" class="blog-nav-item" title="{{ node.title }}">{{node.menuTitle}}</a>
+        {% endfor %}
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">{{ page.title }}</h1>
+        <p class="lead blog-description">{{ page.description }}</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+

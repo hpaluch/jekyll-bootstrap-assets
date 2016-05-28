@@ -1,0 +1,15 @@
+
+
+/*
+ * now using boostrap-sass plugin, see
+ * https://github.com/jekyll/jekyll-assets
+ * https://github.com/twbs/bootstrap-sass
+ */
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// see http://getbootstrap.com/examples/blog/
+@import "ie10-viewport-bug-workaround";
+@import "blog";
+
