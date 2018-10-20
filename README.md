@@ -63,6 +63,17 @@ bundler install
 ./generate_website.sh
 ```
 
+  > WARNING!
+  > To have correct links in generated web pages you need to 
+  > to edit `_configy.yml` and change at least:
+  > ```
+  > url: "https://hpaluch.github.io/jekyll-bootstrap-assets"
+  > ...
+  > assets:
+  >   cdn: https://hpaluch.github.io/jekyll-bootstrap-assets
+  > ```
+  > to point to your deployment site.
+
 * To Develop pages dynamically - accesible from localhost only:
 
 ```bash
