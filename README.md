@@ -57,22 +57,17 @@ bundler install
 
 ## Running Jekyll
 
-* To Generate static pages in `_site` directory:
-
-```bash
-./generate_website.sh
-```
-
-  > WARNING!
-  > To have correct links in generated web pages you need to 
-  > to edit `_configy.yml` and change at least:
-  > ```
-  > url: "https://hpaluch.github.io/jekyll-bootstrap-assets"
-  > ...
-  > assets:
-  >   cdn: https://hpaluch.github.io/jekyll-bootstrap-assets
-  > ```
-  > to point to your deployment site.
+* To Generate static pages suitable for deployment:
+  * edit `url` and `assets/cdn` in `_config.yml` - defaults are:
+    ```
+    url: "https://hpaluch.github.io/jekyll-bootstrap-assets"
+    assets:
+      cdn: https://hpaluch.github.io/jekyll-bootstrap-assets
+    ```
+  * and then invoke script to generate pages in `_site` target directory: 
+    ```bash
+    ./generate_website.sh
+    ```
 
 * To Develop pages dynamically - accesible from localhost only:
 
@@ -80,22 +75,12 @@ bundler install
 ./run_jekyll_server.sh
 ```
 * To Develop pages dynamically - accesible from any remote hosts:
-
-```bash
-./run_jekyll_server_remote_access.sh
-```
-
-> WARNING!
-> Some links will not work in remote access mode unless you
-> correct URLs in `_config_server.yml` which contains localhost by default:
-> ```
-> url: "http://127.0.0.1:4000"
-> 
-> assets:
->    cdn: http://127.0.0.1:4000 
-> ```
->
-> (But remind that once you change it than localhost mode will not work anymore).
+  * change URLs in `_config_server_remote.yml` to resolve properly
+    to your development server
+  * and then run:
+    ```bash
+    ./run_jekyll_server_remote_access.sh
+    ```
 
 # Links
 
