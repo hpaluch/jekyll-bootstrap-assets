@@ -63,10 +63,15 @@ bundler install
 ./generate_website.sh
 ```
 
-* To Develop pages dynamically
+* To Develop pages dynamically - accesible from localhost only:
 
 ```bash
 ./run_jekyll_server.sh
+```
+* To Develop pages dynamically - accesible from any remote hosts:
+
+```bash
+./run_jekyll_server_remote_access.sh
 ```
 
 # Links
