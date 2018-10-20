@@ -19,8 +19,7 @@ Install following packages:
 sudo apt-get install git ruby-bundler ruby-dev
 ```
 
-Now skip next chapter (for Ubuntu) and follow common setup instructions.
-
+Now follow [Setup - common instructions](#setup---common-instructions)
 
 ## Setup for Ubuntu
 
