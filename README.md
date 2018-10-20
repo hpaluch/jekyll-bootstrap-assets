@@ -7,15 +7,29 @@ and compression)
 See [Live Demo](https://hpaluch.github.io/jekyll-bootstrap-assets)!
 
 
+# Setup
 
-## Setup
+Tested on Debian and Ubuntu
+
+## Setup for Debian 9.5
+
+Install following packages:
+
+```bash
+sudo apt-get install git ruby-bundler ruby-dev
+```
+
+Now skip next chapter (for Ubuntu) and follow common setup instructions.
+
+
+## Setup for Ubuntu
 
 These instructions are for Ubuntu 14.04.4 LTS for Jekyll 3.1.3:
 
-Install Ruby 2 (Jekyll 3.x requirements):
+Install Ruby 2 (Jekyll 3.x requirements) + git for checkout:
 
 ```bash
-sudo apt-get install ruby2.0-dev ruby2.0
+sudo apt-get install ruby2.0-dev ruby2.0 git
 ```
 
 Install bundler (into /usr/local/bin) via command:
@@ -24,8 +38,18 @@ Install bundler (into /usr/local/bin) via command:
 sudo gem2.0 install bundler
 ```
 
-Install Jekyll itself (as non privileged user):
+Now follow next chapter - common instructions
 
+## Setup - common instructions
+
+Checkout this project - as non-privileged user:
+```bash
+cd
+git clone https://github.com/hpaluch/jekyll-bootstrap-assets.git
+cd jekyll-bootstrap-assets/
+```
+
+For the 1st time you need to install Jekyll's gems using command:
 
 ```bash
 bundler install
