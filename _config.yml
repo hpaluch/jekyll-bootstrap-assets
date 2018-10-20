@@ -19,11 +19,11 @@ assets:
 show_ads: true
 navigation:
   external:
-     - url: http://getbootstrap.com/examples/blog/
-       menuTitle: BlogTemplate
-       title: Bootstrap Blog Template
-     - url: http://getbootstrap.com
-       menuTitle: Bootstrap
-       title: Bootstrap homepage
+     - url: https://getbootstrap.com/docs/3.3/examples/blog/
+       menuTitle: BlogTemplate3
+       title: Bootstrap 3 Blog Template
+     - url: https://getbootstrap.com/docs/3.3/
+       menuTitle: Bootstrap3
+       title: Bootstrap 3 homepage
 
 

@@ -14,8 +14,8 @@ keywords: sample jekyll blog assets
 * [Jekyll static Blog generator](http://jekyllrb.com)
 * [Jekyll assets](https://github.com/jekyll/jekyll-assets)
   for cache busting and assets compression
-* [Bootstrap Blog Theme](http://getbootstrap.com/examples/blog/)
-* [Bootstrap responsive framwork](http://getbootstrap.com/)
+* [Bootstrap 3 Blog Theme](https://getbootstrap.com/docs/3.3/examples/blog/)
+* [Bootstrap 3 responsive framwork](https://getbootstrap.com/docs/3.3/)
 
 
 
