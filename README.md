@@ -85,9 +85,17 @@ bundler install
 ./run_jekyll_server_remote_access.sh
 ```
 
-> WARNING: Some links are broken with remote access - this is
-> because some parts of templates use `url` and `cdn` paths
-> from `_config_server.yml` which points to `http://127.0.0.1:4000`.
+> WARNING!
+> Some links will not work in remote access mode unless you
+> correct URLs in `_config_server.yml` which contains localhost by default:
+> ```
+> url: "http://127.0.0.1:4000"
+> 
+> assets:
+>    cdn: http://127.0.0.1:4000 
+> ```
+>
+> (But remind that once you change it than localhost mode will not work anymore).
 
 # Links
 
