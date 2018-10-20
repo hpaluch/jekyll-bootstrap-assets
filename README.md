@@ -38,8 +38,9 @@ Install bundler (into /usr/local/bin) via command:
 sudo gem2.0 install bundler
 ```
 
-Now follow next chapter - common instructions
-
+Now follow next 
+chapter - [Setup - common instructions](#setup---common-instructions)
+ 
 ## Setup - common instructions
 
 Checkout this project - as non-privileged user:
