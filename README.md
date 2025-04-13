@@ -43,13 +43,13 @@ First step - install OpenSSL 1.1.1:
 ```shell
 mkdir -p ~/old-openssl
 cd ~/old-openssl
-curl -fLO https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1w/openssl-1.1.1w.tar.gz
+curl -fLO \
+  https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1w/openssl-1.1.1w.tar.gz
 tar xvf openssl-1.1.1w.tar.gz
 cd openssl-1.1.1w/
 ./config --prefix=/opt/old-openssl
 make
 sudo mkdir /opt/old-openssl
-echo chown `id -un`:`id -gn` /opt/old-openssl/
 sudo chown `id -un`:`id -gn` /opt/old-openssl/
 make install
 # copy certs - otherwise rubygems.org will fail because CA not trusted
@@ -64,7 +64,7 @@ curl -fLO https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.6.tar.gz
 tar xvf ruby-2.7.6.tar.gz
 cd ruby-2.7.6/
 ./configure --prefix=/opt/old-ruby --with-openssl-dir=/opt/old-openssl \
-     --with-ext=zlib,openssl,readline,gdbm,+
+  --with-ext=zlib,openssl,readline,gdbm,+
 make -j`nproc`
 sudo mkdir /opt/old-ruby
 sudo chown `id -un`:`id -gn` /opt/old-ruby
