@@ -3,7 +3,7 @@ name: ""
 description: ""
 url: "https://hpaluch.github.io/jekyll-bootstrap-assets"
 
-exclude: [ "*.sh" , "*.swp", "README.md","Gemfile","Gemfile.lock" ]
+exclude: [ "*.sh" , "*.swp", "README.md","Gemfile","Gemfile.lock", "vendor" ]
 
 gems:
   - jekyll-assets
