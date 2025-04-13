@@ -33,6 +33,10 @@ sudo dnf group install c-development
 sudo dnf install gdbm-devel readline-devel perl-FindBin perl-Pod-Html zlib-ng-compat-devel
 ```
 
+Now I strongly recommend to install and build everything as dedicated user
+- I created user `jekyll3`.
+- temporarily I added `sudo` permissions to user `jekyll3`
+
 We don't install OpenSSL devel packages - because they are *too new* to build with Ruby 2.x !
 
 Now we have to follow splendid guide :-)
@@ -86,11 +90,24 @@ $ ruby --version
 ruby 2.7.6p219 (2022-04-12 revision c9c2245c0a) [x86_64-linux]
 ```
 
-Now in this project directory do:
+Install exactly same version of bundler as in Gemfile.lock to avoid issues
 ```shell
-# install exactly same version of bundler as in Gemfile.lock to avoid issues
 gem install bundler:1.13.6
-bundler install
+```
+
+Note: I strongly recommend to:
+- change owner of installed binaries as root:
+  ```shell
+  # run as root:
+  sudo chown -R root:root /opt/old-{ruby,openssl}
+  ```
+- remove `sudo` permissions for `jekyll3` user (to ensure that bundler does not make system wide changes).
+
+Now in this project directory do:
+
+```shell
+# path is important - otherwise bundler will use system path...
+bundle install --path vendor/bundle
 ./run_jekyll_server.sh
 ```
 
@@ -146,7 +163,8 @@ cd jekyll-bootstrap-assets/
 For the 1st time you need to install Jekyll's gems using command:
 
 ```bash
-bundler install
+# path is important - otherwise bundler will use system path...
+bundle install --path vendor/bundle
 ```
 
 ## Running Jekyll
