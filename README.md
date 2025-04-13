@@ -15,14 +15,15 @@ Tested under Fedora 41, (in the past Ubuntu and Debian)
 > [!WARNING]
 >
 > It is tricky, because we use
-> origin `jekyll-assets` plugin from: https://web.archive.org/web/20170314151003/https://github.com/jekyll/jekyll-assets
+> original `jekyll-assets` plugin
+> from: https://web.archive.org/web/20170314151003/https://github.com/jekyll/jekyll-assets
 > that works with Jekyll 3.x only, which works with Ruby 2.x only which works
 > with openssl 1.1.x only (!). So setup below is clumsy ...
 >
 > Please note that when you today enter `jekyll-assets`
 > URL: https://github.com/jekyll/jekyll-assets
 > you will be creepily redirected to https://github.com/envygeeks/jekyll-assets that
-> works different way (!) - it no longer supports original tags like `{% css name %}` or {% js name %},
+> works different way (!) - it no longer supports original tags like `{% css name %}` or `{% js name %}`,
 > or `{% img name %}`
 
 
