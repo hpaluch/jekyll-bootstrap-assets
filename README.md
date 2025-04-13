@@ -6,23 +6,30 @@ and compression)
 
 See [Live Demo](https://hpaluch.github.io/jekyll-bootstrap-assets)!
 
-
 # Setup
 
 Tested under Fedora 41, (in the past Ubuntu and Debian)
 
-## Setup for Fedora 41
+## Setup for Fedora 41 (April 2025)
 
 > [!WARNING]
 >
-> It is tricky, because we use [jekyll-assets](https://github.com/envygeeks/jekyll-assets)
-> plugin that works with Jekyll 3.x only, but that works with Ruby 2.x only and that works
+> It is tricky, because we use
+> origin `jekyll-assets` plugin from: https://web.archive.org/web/20170314151003/https://github.com/jekyll/jekyll-assets
+> that works with Jekyll 3.x only, which works with Ruby 2.x only which works
 > with openssl 1.1.x only (!). So setup below is clumsy ...
+>
+> Please note that when you today enter `jekyll-assets`
+> URL: https://github.com/jekyll/jekyll-assets
+> you will be creepily redirected to https://github.com/envygeeks/jekyll-assets that
+> works different way (!) - it no longer supports original tags like `{% css name %}` or {% js name %},
+> or `{% img name %}`
+
 
 Install these dependencies:
 ```shell
 sudo dnf group install c-development
-sudo dnf install gdbm-devel readline-devel perl-FindBin perl-Pod-Html
+sudo dnf install gdbm-devel readline-devel perl-FindBin perl-Pod-Html zlib-ng-compat-devel
 ```
 
 We don't install OpenSSL devel packages - because they are *too new* to build with Ruby 2.x !
@@ -36,7 +43,7 @@ First step - install OpenSSL 1.1.1:
 mkdir -p ~/old-openssl
 cd ~/old-openssl
 curl -fLO https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1w/openssl-1.1.1w.tar.gz
-tar xvf openssl-1.1.1w.tar.gz 
+tar xvf openssl-1.1.1w.tar.gz
 cd openssl-1.1.1w/
 ./config --prefix=/opt/old-openssl
 make
@@ -55,6 +62,8 @@ cd ~/old-ruby
 curl -fLO https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.6.tar.gz
 tar xvf ruby-2.7.6.tar.gz
 cd ruby-2.7.6/
+./configure --prefix=/opt/old-ruby --with-openssl-dir=/opt/old-openssl \
+     --with-ext=zlib,openssl,readline,gdbm,+
 make -j`nproc`
 sudo mkdir /opt/old-ruby
 sudo chown `id -un`:`id -gn` /opt/old-ruby
@@ -65,7 +74,7 @@ Testing (you can add these two lines to your `~/.bashrc` if you don't plan using
 any other version of ruby lang):
 
 ```shell
-# add ruby 2.7.6 to path 
+# add ruby 2.7.6 to path
 export PATH="/opt/old-ruby/bin:$PATH"
 ```
 
@@ -78,6 +87,8 @@ ruby 2.7.6p219 (2022-04-12 revision c9c2245c0a) [x86_64-linux]
 
 Now in this project directory do:
 ```shell
+# install exactly same version of bundler as in Gemfile.lock to avoid issues
+gem install bundler:1.13.6
 bundler install
 ./run_jekyll_server.sh
 ```
@@ -119,9 +130,9 @@ Install bundler (into /usr/local/bin) via command:
 sudo gem2.0 install bundler
 ```
 
-Now follow next 
+Now follow next
 chapter - [Setup - common instructions](#setup---common-instructions)
- 
+
 ## Setup - common instructions
 
 Checkout this project - as non-privileged user:
@@ -146,7 +157,7 @@ bundler install
     assets:
       cdn: https://hpaluch.github.io/jekyll-bootstrap-assets
     ```
-  * and then invoke script to generate pages in `_site` target directory: 
+  * and then invoke script to generate pages in `_site` target directory:
     ```bash
     ./generate_website.sh
     ```
